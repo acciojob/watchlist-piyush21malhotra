@@ -35,8 +35,8 @@ public class MovieController {
     }
 
     @GetMapping("/get-all-movies")
-    public ResponseEntity<List<String>> getAllMoviesName() {
-        List<String> listOfMovies = movieService.getAllMoviesName();
+    public ResponseEntity<List<String>> findAllMovies() {
+        List<String> listOfMovies = movieService.findAllMovies();
         return new ResponseEntity<>(listOfMovies, HttpStatus.ACCEPTED);
     }
 
@@ -65,8 +65,8 @@ public class MovieController {
     /*<----------- Delete Methods ---------------->*/
 
     @DeleteMapping("/delete-director-by-name")
-    public ResponseEntity<String> deleteDirector(@RequestParam String director) {
-        movieService.deleteDirector(director);
+    public ResponseEntity<String> deleteDirectorByName(@RequestParam String director) {
+        movieService.deleteDirectorByName(director);
         return new ResponseEntity<>(director + " removed successfully", HttpStatus.CREATED);
     }
 

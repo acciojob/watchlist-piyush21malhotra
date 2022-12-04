@@ -1,11 +1,7 @@
 package com.driver;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.*;
 
@@ -29,8 +25,8 @@ public class MovieService {
         return movieRepository.getMoviesByDirectorName(director);
     }
 
-    public List<String> getAllMoviesName() {
-        return movieRepository.getAllMoviesName();
+    public List<String> findAllMovies() {
+        return movieRepository.findAllMovies();
     }
 
 
@@ -52,8 +48,8 @@ public class MovieService {
 
     /*<----------- Delete Methods ---------------->*/
 
-    public void deleteDirector(String director) {
-        movieRepository.deleteDirector(director);
+    public void deleteDirectorByName(String director) {
+        movieRepository.deleteDirectorByName(director);
     }
 
     public void deleteAllDirectors() {
